@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ponnuuuhhh ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: #fff;
+  text-align: center;
+}
+
+.page {
+  display: none;
+  padding: 30px 20px;
+  animation: fadeIn 1s ease;
+}
+
+.active {
+  display: block;
+}
+
+.card {
+  background: rgba(255,255,255,0.95);
+  color: #333;
+  border-radius: 25px;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff6a88, #ff99ac);
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,105,135,0.6);
+}
+
+img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>Happy Birthday Ponnuuuhhh ❤️</h1>
+
+  <audio controls loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button onclick="nextPage('page2')">Start ❤️</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <div class="card">
+    <h2>Your Message 🎧</h2>
+    <audio controls>
+      <source src="voice.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div class="card">
+    <h2>From Diluuuh 💌</h2>
+    <p>
+      iyy ooorkndoo namml set aaya day.... Ndhru happy aayrnnu nammll...<br><br>
+      Adi illa vazhakk illaa onnumm illa just happyy....<br><br>
+      Nammakk onnudi aa pazhaya nammal aayikkoode ponnuveee ❤️
+    </p>
+  </div>
+
+  <button onclick="nextPage('page3')">Continue ➜</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <div class="card">
+    <h2>Our Memory 📸</h2>
+    <img src="photo.jpg" alt="Our photo">
+  </div>
+
+  <div class="card">
+    <h2>Click this last 🫶</h2>
+    <button onclick="showMessage()">Click me</button>
+    <p id="surprise" style="display:none; color:#ff4d6d; font-size:1.3em;">
+      Can you be my ponnuhhh againn 🥹🫴
+    </p>
+  </div>
+</div>
+
+<script>
+function nextPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+}
+
+function showMessage() {
+  document.getElementById('surprise').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
